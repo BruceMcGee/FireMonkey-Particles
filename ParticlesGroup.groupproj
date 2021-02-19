@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{20FD7D5B-65CB-4A15-A92A-D69F829946C9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FireMonkeyParticles\FireMonkeyParticles.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ParticlesExplorer\ParticlesExplorer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MultipleParticles\MultipleParticles.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FireMonkeyParticles">
+        <MSBuild Projects="FireMonkeyParticles\FireMonkeyParticles.dproj"/>
+    </Target>
+    <Target Name="FireMonkeyParticles:Clean">
+        <MSBuild Projects="FireMonkeyParticles\FireMonkeyParticles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FireMonkeyParticles:Make">
+        <MSBuild Projects="FireMonkeyParticles\FireMonkeyParticles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ParticlesExplorer">
+        <MSBuild Projects="ParticlesExplorer\ParticlesExplorer.dproj"/>
+    </Target>
+    <Target Name="ParticlesExplorer:Clean">
+        <MSBuild Projects="ParticlesExplorer\ParticlesExplorer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParticlesExplorer:Make">
+        <MSBuild Projects="ParticlesExplorer\ParticlesExplorer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultipleParticles">
+        <MSBuild Projects="MultipleParticles\MultipleParticles.dproj"/>
+    </Target>
+    <Target Name="MultipleParticles:Clean">
+        <MSBuild Projects="MultipleParticles\MultipleParticles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultipleParticles:Make">
+        <MSBuild Projects="MultipleParticles\MultipleParticles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FireMonkeyParticles;ParticlesExplorer;MultipleParticles"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FireMonkeyParticles:Clean;ParticlesExplorer:Clean;MultipleParticles:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FireMonkeyParticles:Make;ParticlesExplorer:Make;MultipleParticles:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,72 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Multiple Particles'
+  ClientHeight = 545
+  ClientWidth = 757
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object PaintBox1: TPaintBox
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 486.000000000000000000
+    Size.Height = 329.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox1Paint
+    object lblBrand: TLabel
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      StyledSettings = []
+      Opacity = 0.500000000000000000
+      Position.X = 302.000000000000000000
+      Position.Y = 298.000000000000000000
+      Size.Width = 176.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Trailing
+      Text = 'Glooscap Software'
+      TabOrder = 16
+    end
+  end
+  object Timer1: TTimer
+    Interval = 16
+    OnTimer = Timer1Timer
+    Left = 32
+    Top = 96
+  end
+  object PaintBox2: TPaintBox
+    Anchors = [akTop, akRight, akBottom]
+    Position.X = 501.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 329.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox2Paint
+  end
+  object PaintBox3: TPaintBox
+    Anchors = [akLeft, akRight, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 486.000000000000000000
+    Size.Height = 193.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox3Paint
+  end
+  object PaintBox4: TPaintBox
+    Anchors = [akRight, akBottom]
+    Position.X = 501.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 193.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox4Paint
+  end
+end

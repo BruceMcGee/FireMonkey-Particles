@@ -1,0 +1,43 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'FireMonkey Particles'
+  ClientHeight = 405
+  ClientWidth = 772
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object PaintBox1: TPaintBox
+    Align = Client
+    Size.Width = 772.000000000000000000
+    Size.Height = 405.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox1Paint
+    object lblBrand: TLabel
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      StyledSettings = []
+      Opacity = 0.500000000000000000
+      Position.X = 580.000000000000000000
+      Position.Y = 367.000000000000000000
+      Size.Width = 176.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Trailing
+      Text = 'Glooscap Software'
+      TabOrder = 16
+    end
+  end
+  object Timer1: TTimer
+    Interval = 16
+    OnTimer = Timer1Timer
+    Left = 32
+    Top = 96
+  end
+end

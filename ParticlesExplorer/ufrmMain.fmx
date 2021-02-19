@@ -1,0 +1,248 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Particles Explorer'
+  ClientHeight = 562
+  ClientWidth = 819
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object PaintBox1: TPaintBox
+    Align = Client
+    Size.Width = 819.000000000000000000
+    Size.Height = 360.000000000000000000
+    Size.PlatformDefault = False
+    OnPaint = PaintBox1Paint
+    object lblBrand: TLabel
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      StyledSettings = []
+      Opacity = 0.500000000000000000
+      Position.X = 627.000000000000000000
+      Position.Y = 322.000000000000000000
+      Size.Width = 176.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Trailing
+      Text = 'Glooscap Software'
+      TabOrder = 16
+    end
+  end
+  object Timer1: TTimer
+    Interval = 16
+    OnTimer = Timer1Timer
+    Left = 32
+    Top = 96
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 360.000000000000000000
+    Size.Width = 819.000000000000000000
+    Size.Height = 202.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object colBackground: TColorPanel
+      Color = claWhite
+      Position.X = 369.000000000000000000
+      Position.Y = 35.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 149.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      OnChange = colBackgroundChange
+    end
+    object colLine: TColorPanel
+      Color = claWhite
+      Position.X = 545.000000000000000000
+      Position.Y = 35.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 149.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      OnChange = colLineChange
+    end
+    object Label1: TLabel
+      Position.Y = 40.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Particles:'
+      TabOrder = 8
+      TabStop = False
+    end
+    object Label2: TLabel
+      Position.Y = 64.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Line Distance:'
+      TabOrder = 9
+      TabStop = False
+    end
+    object Label3: TLabel
+      Position.X = 40.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Mouse:'
+      TabOrder = 10
+      TabStop = False
+    end
+    object Label4: TLabel
+      Position.X = 377.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Background:'
+      TabOrder = 11
+      TabStop = False
+    end
+    object Label5: TLabel
+      Position.X = 553.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 33.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Line:'
+      TabOrder = 12
+      TabStop = False
+    end
+    object lblLineDistance: TLabel
+      Position.X = 312.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblLineDistance'
+      TabOrder = 14
+      TabStop = False
+    end
+    object lblParticleCount: TLabel
+      Position.X = 312.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblParticleCount'
+      TabOrder = 15
+      TabStop = False
+    end
+    object rbAttract: TRadioButton
+      GroupName = 'MouseBehavior'
+      Position.X = 232.000000000000000000
+      Position.Y = 89.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Attract'
+      OnChange = rbChange
+    end
+    object rbIgnore: TRadioButton
+      GroupName = 'MouseBehavior'
+      Position.X = 96.000000000000000000
+      Position.Y = 89.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Ignore'
+      OnChange = rbChange
+    end
+    object rbRepell: TRadioButton
+      GroupName = 'MouseBehavior'
+      Position.X = 168.000000000000000000
+      Position.Y = 89.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Repel'
+      OnChange = rbChange
+    end
+    object tbLineDistance: TTrackBar
+      CanParentFocus = True
+      Frequency = 1.000000000000000000
+      Max = 500.000000000000000000
+      Orientation = Horizontal
+      Position.X = 96.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = tbLineDistanceChange
+    end
+    object tbParticleCount: TTrackBar
+      CanParentFocus = True
+      Max = 500.000000000000000000
+      Orientation = Horizontal
+      Position.X = 96.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = tbParticleCountChange
+    end
+    object tbMouseRadius: TTrackBar
+      CanParentFocus = True
+      Max = 500.000000000000000000
+      Orientation = Horizontal
+      Position.X = 96.000000000000000000
+      Position.Y = 120.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      OnChange = tbMouseRadiusChange
+    end
+    object lblMouseRadius: TLabel
+      Position.X = 312.000000000000000000
+      Position.Y = 120.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblMouseRadius'
+      TabOrder = 16
+    end
+    object Label6: TLabel
+      Position.Y = 120.000000000000000000
+      Size.Width = 88.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Mouse Radius:'
+      TabOrder = 13
+    end
+    object lblBackground: TLabel
+      Position.X = 449.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblBackground'
+      TabOrder = 17
+    end
+    object lblLine: TLabel
+      Position.X = 585.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblLine'
+      TabOrder = 18
+    end
+  end
+end
